@@ -1,23 +1,21 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <b-navbar type="dark" variant="dark">
+      <b-navbar-nav>
+        <b-nav-item :to="{path:'about_blog'}" href="#">学习</b-nav-item>
+        <!-- Navbar dropdowns -->
+        <b-nav-item-dropdown text="技术学习" right>
+          <b-dropdown-item :to="{name:'MSG'}" href="#">Redis</b-dropdown-item>
+          <b-dropdown-item href="#">RocketMQ</b-dropdown-item>
+          <b-dropdown-item href="#">NIO</b-dropdown-item>
+        </b-nav-item-dropdown>
+        <b-nav-item-dropdown text="文学" right>
+          <b-dropdown-item :to="{path:'poem'}" href="#">诗书</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+    </b-navbar>
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'App'
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

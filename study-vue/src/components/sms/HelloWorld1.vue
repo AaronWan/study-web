@@ -1,18 +1,21 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2 v-html="title"></h2>
-    <a v-bind:href="url">baidu</a>
+    <h2>{{title}}</h2>
+    <a v-bind:href="url">Google</a>
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'MSG',
   data () {
     return {
-      msg: '流程团队控制台',
-      title: '<h1>引擎<h/1>',
+      msg: '流程团队控制台1',
+      title: '短信服务',
       url: 'http://www.baidu.com'
     }
   }
